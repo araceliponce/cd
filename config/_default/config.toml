@@ -1,7 +1,7 @@
 baseURL = "http://localhost"
-copyright = "Copyright © 2021"
-title = "hugo-theme-gruvbox"
-#paginate = 10
+copyright = "Copyright © 2024"
+title = "Tacna Viva"
+#paginate = 5
 enableRobotsTXT = true
 # Enable to calculate the last modified date from Git history and show it in the post header
 #enableGitInfo = true
@@ -9,7 +9,7 @@ enableRobotsTXT = true
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      # This setting allows inlining <script> and <style> tags in markdown, 
+      # This setting in true allowed inlining <script> and <style> tags in markdown, 
       # which is useful and required to use Prism plugins, but may be dangerous 
       # if the content isn't trustworthy.
       unsafe = true
@@ -23,17 +23,17 @@ enableRobotsTXT = true
   # https://github.com/schnerring/hugo-theme-gruvbox/issues/34#issuecomment-1235870375
   #defaultTheme = "light"
   # gray red green yellow blue purple aqua orange, defaults to blue
-  #themeColor = "blue"
+  #themeColor = "green"
   # soft medium hard, defaults to medium
-  #themeContrast = "medium"
-  author = "Michael Schnerring"
-  subtitle = "Theme Demo"
-  description = "A retro-looking Hugo theme inspired by gruvbox. The pastel colors are high contrast, easily distinguishable, pleasing to the eye, and feature light and dark color palettes."
+  #themeContrast = "soft"
+  author = "Tacna Viva"
+  subtitle = "Telling Tacna's tale through its natural wonders."
+  description = "The ever-growing compilation of the diversity of life in Tacna - Perú."
 
   [params.logo]
-    text = "gruvbox"
+    text = "Tacna Viva"
     url = "/"
-
+ 
   [params.prism]
     languages = [
       "markup",
@@ -52,7 +52,7 @@ enableRobotsTXT = true
       "command-line",
       "diff-highlight"
     ]
-  
+
   # By default, the theme creates resized versions of images ranging from 300 to
   # 700 pixels wide in increments of 200 pixels
   #[params.imageResize]
@@ -60,10 +60,11 @@ enableRobotsTXT = true
   #  max = 700
   #  increment = 200
   
+
   [params.tagCloud]
-    enable = false
+    enable = true
     minFontSizeRem = 0.8
-    maxFontSizeRem = 2.0
+    maxFontSizeRem = 1.3
 
   # Social share links for posts:
   #   - iconSuite: "simple-icon" or "tabler-icon"
@@ -138,13 +139,16 @@ enableRobotsTXT = true
     weight = 30
 
 [languages]
-  [languages.en]
-    languageName = "English"
+  [languages.es]
+    languageName = "Español"
     weight = 10
-    [languages.en.params.jsonResume]
-      present = "present"
-  [languages.de]
-    languageName = "Deutsch"
+      [languages.es.params]
+      search = 'Buscaaaaa ...'
+  [languages.en]
+    languageName = "Inglés"
     weight = 20
-    [languages.de.params.jsonResume]
-      present = "heute"
+    [languages.en.params]
+      search = 'Seaaarch ...'
+  [languages.fr]
+    languageName = "Francés"
+    weight = 30

@@ -1,12 +1,66 @@
 {{ define "main" }}
-  <div class="content-section">
-    <h1>{{ .Title | markdownify }}</h1>
-    {{ with .Content }}
-      <div>{{ . }}</div>
-    {{ end }}
-  </div>
-  <!-- See https://gohugo.io/functions/where/#mainsections -->
-  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{ $paginator := .Paginate $pages }}
-  {{ partial "post-list.html" $paginator }}
+
+{{ partial "hero.html" . }}
+<div id="st-trigger-effects" class="column">
+  <button data-effect="st-effect-1">Slide in on top</button>
+  <button data-effect="st-effect-3">Push</button>
+</div>
+<div class="content-section oo">
+  <h1>HOLA SOY MAIN EN INDEX{{ .Title | markdownify }}</h1>
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+</div>
+<!-- See https://gohugo.io/functions/where/#mainsections -->
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{ $paginator := .Paginate $pages }}
+<!-- {{ partial "post-list.html" $paginator }} -->
+{{ partial "scroller-posts.html" $paginator }}
+
+
+<script>
+  /* 
+Inspired from: https://tympanus.net/codrops/2013/08/28/transitions-for-off-canvas-navigations/
+
+there are still some quirks for animation 3, 6, 7, 8 & 14 
+as they do not animate back gracefully  
+(those are the navs in the div with class st-pusher)
+*/
+
+  var click = document.querySelectorAll('div button');
+  var menu = document.querySelector('#st-container');
+  var pusher = document.querySelector('.st-pusher');
+  // to store the corresponding effect
+  var effect;
+
+  // adding a click event to all the buttons
+  for (var i = 0; i < click.length; i++) {
+    click[i].addEventListener('click', addClass)
+  }
+
+  pusher.addEventListener('click', closeMenu);
+
+
+
+  function addClass(e) {
+    // to get the correct effect
+    effect = e.target.getAttribute('data-effect');
+    // adding the effects
+    menu.classList.toggle(effect);
+    menu.classList.toggle('st-menu-open');
+
+    // console.log(e.target.getAttribute('data-effect'));
+  }
+
+  function closeMenu(el) {
+    // if the click target has this class then we close the menu by removing all the classes
+    if (el.target.classList.contains('st-pusher')) {
+      menu.classList.toggle(effect);
+      menu.classList.toggle('st-menu-open');
+      // console.log(el.target);
+    }
+  }
+
+</script>
+
 {{ end }}

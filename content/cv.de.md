@@ -4,6 +4,7 @@ draft: false
 type: "cv"
 ---
 
+o sea el /de/ va en medio https://hugo-theme-gruvbox.schnerring.net/de/cv/
 ## Erfahrung
 
 {{< json-resume "work" >}}
@@ -16,34 +17,3 @@ type: "cv"
 
 {{< json-resume "volunteer" >}}
 
-## Auszeichnungen
-
-{{< json-resume "awards" >}}
-
-## Zertifikate
-
-{{< json-resume "certificates" >}}
-
-## Publikationen
-
-{{< json-resume "publications" >}}
-
-## Fähigkeiten
-
-{{< json-resume "skills" >}}
-
-## Sprachen
-
-{{< json-resume "languages" >}}
-
-## Interessen
-
-{{< json-resume "interests" >}}
-
-## Referenzen
-
-{{< json-resume "references" >}}
-
-## Projekte
-
-{{< json-resume "projects" >}}

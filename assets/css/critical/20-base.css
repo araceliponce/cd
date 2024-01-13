@@ -181,6 +181,7 @@ th {
 
 code,
 kbd {
+
   & code,
   & kbd {
     background: var(--bg2);
@@ -192,15 +193,7 @@ pre {
   padding: 1rem;
 }
 
-pre {
-  /* TODO is !important really needed because of Prism? */
-  background: var(--bg1) !important;
-  overflow: auto;
 
-  & code {
-    background: none;
-  }
-}
 
 blockquote,
 blockquote.twitter-tweet {
