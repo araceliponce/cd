@@ -4,7 +4,6 @@ date: "2024-01-01"
 comments: false
 socialShare: true
 toc: true
-
 description: algo breve
 tags:
   - mariposas azufre
@@ -22,6 +21,8 @@ No eres leyenda, como la monarca,
 o la glamorosa cola de golondrina,
 o la roja almirante[...]<br>
 — *Sally Sandler, (pequeña traducción de su [Oda a la mariposa azufre](https://www.poemhunter.com/poem/ode-to-a-sulfur-butterfly/))*
+
+<!--more-->
 
 ¿Por qué estas hermosas mariposas llevan un nombre tan... disonante?
 
