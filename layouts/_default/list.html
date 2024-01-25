@@ -1,9 +1,11 @@
 {{ define "main" }}
-  <div class="content-section list-html-no-se-esta-usando">
-    <h1>{{ .Title | markdownify }}</h1>
-    {{ with .Content }}
-      <div>{{ . }}</div>
-    {{ end }}
-  </div>
+<div class="content  list-html-no-se-esta-usando">
+  <h1>{{ .Title | markdownify }}</h1>
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+  <!-- </div> -->
   {{ partial "post-list.html" .Paginator }}
+</div>
+
 {{ end }}

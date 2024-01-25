@@ -12,7 +12,7 @@
   {{ $max := add (len (index .ByCount         0).Pages) 1 }}
 
 
-  <div class="tag-cloud">
+  <div class="post-tags">
     {{ range $tagName, $weightedPages := . }}
       {{ $count := len $weightedPages.Pages }}
       {{ $weight := div (sub (math.Log $count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
@@ -25,7 +25,10 @@
         {{ else -}}
           class="tag-cloud__tag"
         {{ end -}}
-        >{{ $tagName }}</a
+        >
+        <!-- {{ $tagName }} -->
+        {{- replace (urlize $tagName) "-" " " | safeHTML -}}
+        </a
       >
     {{ end }}
   </div>

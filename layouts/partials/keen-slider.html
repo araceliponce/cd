@@ -1,0 +1,99 @@
+<div class="keen-slider w-90vw" id="slider">
+
+  {{ range $pageIndex, $page := .Pages }}
+
+  <article class="keen-slider__slide slide">
+    <div class="post-header">
+      <h2>
+        <a href="{{ $page.RelPermalink }}">{{ .Title | markdownify }}</a>
+      </h2>
+      {{ partial "post-meta--keen.html" (dict "page" $page "pageIndex" $pageIndex) }}
+    </div>
+
+    <!-- <div class="post-content">
+      {{ with .Description }}
+      {{ . }}
+      {{ else }}
+      {{ .Summary }}
+      {{ if .Truncated }}
+      <div class="post-content__read-more">
+        <a href="{{ $page.RelPermalink }}">Leer más</a>
+      </div>
+      {{ end }}
+      {{ end }}
+    </div> -->
+  </article>
+  {{ end }}
+  <!-- Navigation buttons  -->
+  <button id="prev" class="arrow arrow--left" aria-label="Anterior"></button>
+  <button id="next" class="arrow arrow--right" aria-label="Siguiente"></button>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js"></script>
+
+<!-- <script src="https://unpkg.com/keen-slider/keen-slider.min.js"></script> -->
+<script>
+  var keenSlider = new KeenSlider("#slider", {
+
+    mode: "snap",
+    loop: false,
+    slides: {
+      origin: "center",
+      perView: 1.2,
+      spacing: 10,
+    },
+    breakpoints: {
+      '(min-width: 650px)': {
+
+        slides: {
+          perView: 2,
+          spacing: 10,
+        }
+      },
+      '(min-width: 1200px)': {
+
+        slides: {
+          perView: 3,
+          spacing: 10,
+        }
+      },
+    },
+
+  },
+    [
+      (slider) => {
+        let timeout
+        let mouseOver = false
+        function clearNextTimeout() {
+          clearTimeout(timeout)
+        }
+        function nextTimeout() {
+          clearTimeout(timeout)
+          if (mouseOver) return
+          timeout = setTimeout(() => {
+            slider.next()
+          }, 2000)
+        }
+        slider.on("created", () => {
+          slider.container.addEventListener("mouseover", () => {
+            mouseOver = true
+            clearNextTimeout()
+          })
+          slider.container.addEventListener("mouseout", () => {
+            mouseOver = false
+            nextTimeout()
+          })
+          nextTimeout()
+        })
+        slider.on("dragStarted", clearNextTimeout)
+        slider.on("animationEnded", nextTimeout)
+        slider.on("updated", nextTimeout)
+      },
+    ]
+  )
+
+  document.getElementById('prev').addEventListener('click', () => keenSlider.prev());
+  document.getElementById('next').addEventListener('click', () => keenSlider.next());
+</script>

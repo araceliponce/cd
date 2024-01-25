@@ -16,8 +16,8 @@
 <!-- {{ $flexsearch := resources.Get "js/flexsearch.js" | resources.ExecuteAsTemplate "js/flexsearch.js" . | js.Build $jsBuildOptions }} -->
 
 {{ if hugo.IsProduction }}
-{{ $bundle = $bundle | fingerprint "sha512" }}
-{{ $flexsearch = $flexsearch | fingerprint "sha512" }}
+{{ $bundle = $bundle | fingerprint "sha256" }}
+{{ $flexsearch = $flexsearch | fingerprint "sha256" }}
 {{ end }}
 
 {{/* prettier-ignore-start */}}

@@ -1,4 +1,4 @@
-<header>
+<header class="header">
   <a class="logo" href="
     {{- with $.Site.Params.Logo.URL -}}
       {{- . -}}
@@ -8,40 +8,20 @@
     {{ with $.Site.Params.Logo.Text }}
     <div class="logo__text">{{ . }}</div>
     {{ end }}
-    <div class="logo__chevron">></div>
-    <div class="logo__cursor">█</div>
   </a>
 
   <div class="search">
     <input id="search__text" type="search" placeholder="{{- $.Site.Params.search -}}" aria-label="{{- $.Site.Params.search -}}" autocomplete="off" />
     <div id="search__suggestions" class="search__suggestions--hidden"></div>
+
   </div>
 
-  <nav id="menu">
-    <ul class="menu--horizontal">
-      {{ range $.Site.Menus.main }}
-      <li class="menu__item">
-        <a href="{{ .URL }}">{{ .Name }}</a>
-      </li>
-      {{ end }}
-    </ul>
 
-    <div class="menu__burger">
-      <!-- Invisible checkbox indicating menu state -->
-      <input class="menu__item" type="checkbox" aria-label="Open main menu" />
+  <div>
+    <button data-effect="st-effect-1" aria-label="Mostrar sidebar de navegación">Ss</button>
+    <!-- <button data-effect="st-effect-3">Push</button> -->
+  </div>
 
-      {{ partial "icons/tabler-icon.html" "menu-2" }}
-
-
-      <ul class="menu--vertical">
-        {{ range $.Site.Menus.main }}
-        <li>
-          <a class="menu__item" href="{{ .URL }}">{{ .Name }}</a>
-        </li>
-        {{ end }}
-      </ul>
-    </div>
-  </nav>
 
   <button class="theme__toggle light--hidden" aria-label="Toggle light mode">
     {{ partial "icons/tabler-icon.html" "sun" }}
@@ -51,3 +31,42 @@
     {{ partial "icons/tabler-icon.html" "moon" }}
   </button>
 </header>
+
+<style>
+  button {
+    cursor: pointer;
+  }
+
+  .header button>span {
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  var btns = document.querySelectorAll('[data-effect]');
+  var menu = document.querySelector('#st-container');
+  var pusher = document.querySelector('.st-pusher');
+  var effect;
+
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      e = event
+      effect = e.target.getAttribute('data-effect');
+
+      menu.classList.toggle(effect);
+      menu.classList.toggle('st-menu-open');
+    })
+  })
+
+  pusher.addEventListener('click', closeMenu);
+
+  function closeMenu(el) {
+
+    if (el.target.classList.contains('st-pusher')) {
+      menu.classList.toggle(effect);
+      menu.classList.toggle('st-menu-open');
+
+    }
+  }
+</script>

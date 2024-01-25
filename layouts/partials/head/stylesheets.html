@@ -8,9 +8,9 @@
 
 {{ if hugo.IsProduction }}
   {{ $critical = $critical | resources.PostProcess }}
-  {{ $nonCritical = $nonCritical | fingerprint "sha512" | resources.PostProcess }}
-  {{ $prismDark = $prismDark | minify | fingerprint "sha512" }}
-  {{ $prismLight = $prismLight | minify | fingerprint "sha512" }}
+  {{ $nonCritical = $nonCritical | fingerprint "sha256" | resources.PostProcess }}
+  {{ $prismDark = $prismDark | minify | fingerprint "sha256" }}
+  {{ $prismLight = $prismLight | minify | fingerprint "sha256" }}
 {{ end }}
 
 <style>

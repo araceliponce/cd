@@ -1,6 +1,8 @@
 baseURL = "http://localhost"
 copyright = "Copyright © 2024"
 title = "Tacna Viva"
+
+defaultContentLanguage = "es"
 #paginate = 5
 enableRobotsTXT = true
 # Enable to calculate the last modified date from Git history and show it in the post header
@@ -26,6 +28,7 @@ enableRobotsTXT = true
   #themeColor = "green"
   # soft medium hard, defaults to medium
   #themeContrast = "soft"
+  
   author = "Tacna Viva"
   subtitle = "Telling Tacna's tale through its natural wonders."
   description = "The ever-growing compilation of the diversity of life in Tacna - Perú."

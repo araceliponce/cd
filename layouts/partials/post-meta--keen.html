@@ -1,0 +1,24 @@
+<div class="post-meta post-meta--keen">
+
+  {{ if .page.Params.cover }}
+  <!-- 
+      Only lazy-load images below-the-fold. For post lists, start loading 
+      covers from the third post and onwards.
+    -->
+  {{ $lazy := ge .pageIndex 2 }}
+  {{ partial "image.html" (dict "src" .page.Params.cover.src "alt" .page.Params.cover.alt "caption" .page.Params.cover.caption "page" .page "lazy" $lazy) }}
+{{ end }}
+  
+  {{ with .page.Params.tags }}
+    <div class="post-tags">
+      {{ range . -}}
+        <a class="post-tag" href="{{ urlize (printf "tags/%s" . ) | absURL }}">
+          {{- /* Replace hyphen with space */ -}}
+          {{- replace (urlize .) "-" " " | safeHTML -}}
+        </a>
+      {{- end }}
+    </div>
+  {{ end }}
+
+ 
+</div>

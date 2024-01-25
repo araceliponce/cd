@@ -1,66 +1,84 @@
 {{ define "main" }}
 
-{{ partial "hero.html" . }}
-<div id="st-trigger-effects" class="column">
-  <button data-effect="st-effect-1">Slide in on top</button>
-  <button data-effect="st-effect-3">Push</button>
+
+<!-- increible lo mucho que cambia un punto-->
+<section class=" hero wide">
+  <!-- <h2>Telling Tacna's Tales trought its natural wonders</h2> -->
+  <h2>Tacna, a través de sus <em>maravillas naturales</em></h2>
+  <div class="mt-2">
+    {{partial "site-cats.html" .}}
+  </div>
+  <a class="btn btn--glow cta">Visita el blog</a>
+
+</section>
+
+<style>
+  .hero {
+    min-height: 70svh;
+    min-height: 70vh;
+    display: grid;
+    align-items: center;
+    align-content: center;
+  }
+
+  .hero h2 {
+    font-size: clamp(2rem, 10vw + 10px, 7rem);
+    line-height: .8;
+    letter-spacing: -.05em;
+  }
+
+  .hero em {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .mt-2 {
+    margin-top: 2rem;
+  }
+
+  .cta {
+    background-color: var(--bg1);
+    color: var(--fs1);
+    padding: 1.5rem;
+    margin-block: 1rem;
+  }
+</style>
+
+
+
+
+<div class="wide pt-5">
+  <!-- <h1>{{ .Title | markdownify }}</h1> -->
+  <!-- {{ with .Content }} -->
+  <!-- <div>{{ . }}</div> -->
+  <!-- {{ end }} -->
+  <!-- </div> -->
+  <!-- See https://gohugo.io/functions/where/#mainsections -->
+  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ $paginator := .Paginate $pages }}
+  <!-- {{ partial "post-list.html" $paginator }} -->
+  {{ partial "keen-slider.html" $paginator }}
+
+
+
 </div>
-<div class="content-section oo">
-  <h1>HOLA SOY MAIN EN INDEX{{ .Title | markdownify }}</h1>
-  {{ with .Content }}
-  <div>{{ . }}</div>
-  {{ end }}
-</div>
-<!-- See https://gohugo.io/functions/where/#mainsections -->
-{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-{{ $paginator := .Paginate $pages }}
-<!-- {{ partial "post-list.html" $paginator }} -->
-{{ partial "scroller-posts.html" $paginator }}
 
-
-<script>
-  /* 
-Inspired from: https://tympanus.net/codrops/2013/08/28/transitions-for-off-canvas-navigations/
-
-there are still some quirks for animation 3, 6, 7, 8 & 14 
-as they do not animate back gracefully  
-(those are the navs in the div with class st-pusher)
-*/
-
-  var click = document.querySelectorAll('div button');
-  var menu = document.querySelector('#st-container');
-  var pusher = document.querySelector('.st-pusher');
-  // to store the corresponding effect
-  var effect;
-
-  // adding a click event to all the buttons
-  for (var i = 0; i < click.length; i++) {
-    click[i].addEventListener('click', addClass)
+<style>
+  .pt-5 {
+    padding-top: 5rem;
+    background-color: var(--bg2);
   }
 
-  pusher.addEventListener('click', closeMenu);
-
-
-
-  function addClass(e) {
-    // to get the correct effect
-    effect = e.target.getAttribute('data-effect');
-    // adding the effects
-    menu.classList.toggle(effect);
-    menu.classList.toggle('st-menu-open');
-
-    // console.log(e.target.getAttribute('data-effect'));
+  .slide {
+    min-width: min(17rem, 70vw);
+    /* min-height: min(20rem, 50vw); */
+    display: flex !important;
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem;
   }
+</style>
 
-  function closeMenu(el) {
-    // if the click target has this class then we close the menu by removing all the classes
-    if (el.target.classList.contains('st-pusher')) {
-      menu.classList.toggle(effect);
-      menu.classList.toggle('st-menu-open');
-      // console.log(el.target);
-    }
-  }
 
-</script>
 
 {{ end }}

@@ -1,0 +1,10 @@
+{{ if .Params.toc }}
+{{ with .TableOfContents }}
+<aside class="toc">
+  <nav>
+    <p class="sidebar__heading">Table Of Contents</p>
+    {{ . }}
+  </nav>
+</aside>
+{{ end }}
+{{ end }}

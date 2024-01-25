@@ -1,0 +1,10 @@
+{{range $name, $taxonomy := .Site.Taxonomies.categoria}} {{ $cnt := .Count }}
+{{ with $.Site.GetPage (printf "/%s" $name) }}
+<ul class="post-tags">
+  <a class="cat" href={{ .RelPermalink }} title="Todos los post en la categoría: {{$name}}">{{$name}}</a>
+  <sup>{{$cnt}}</sup>
+</ul>
+{{end}}
+{{end}}
+
+<!-- <pre>{{ printf "%#v" . }}</pre> -->

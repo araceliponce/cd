@@ -1,21 +1,9 @@
-header {
-  display: grid;
-  font-family: var(--font-monospace);
-  font-size: 1.125rem;
-  grid-template-columns: auto auto 1fr auto;
-  grid-template-areas: "heading search nav theme-toggle";
-  padding: 0.75rem;
-}
-
-
-
-
 /*! purgecss start ignore */
 
 .search {
   display: flex;
-  grid-area: search;
-  margin: 0 1rem;
+  /* grid-area: search; */
+  /* margin: 0 1rem; */
 }
 
 #search__text {
@@ -55,6 +43,10 @@ header {
   position: absolute;
   width: 95vw;
   z-index: 1000;
+
+  /* centrado */
+  transform: translate(-50%, 50%);
+  left: 50%;
 }
 
 @media (--md) {
@@ -62,9 +54,10 @@ header {
     position: relative;
   }
 
+  /* 
   #search__suggestions {
     width: 60vw;
-  }
+  } */
 }
 
 .search__suggestions--hidden {
@@ -192,7 +185,7 @@ nav#menu {
     height: 24px;
     width: 24px;
 
-    &>* {
+    & > * {
       position: absolute;
     }
 
@@ -227,11 +220,11 @@ nav#menu {
       z-index: 30;
 
       &:checked {
-        &~ul.menu--vertical {
+        & ~ ul.menu--vertical {
           transform: none;
         }
 
-        &~svg {
+        & ~ svg {
           stroke: var(--bg1);
 
           & line:nth-of-type(1) {
