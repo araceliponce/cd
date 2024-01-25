@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Tacna Viva</title>
+    <link>https://tacnaviva.com/tags/</link>
+    <description>Recent content in Tags on Tacna Viva</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>Copyright © 2024</copyright>
+    <lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tacnaviva.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mariposas amarillas</title>
+      <link>https://tacnaviva.com/tags/mariposas-amarillas/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/mariposas-amarillas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>mariposas azufre</title>
+      <link>https://tacnaviva.com/tags/mariposas-azufre/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/mariposas-azufre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>css</title>
+      <link>https://tacnaviva.com/tags/css/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/css/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>html</title>
+      <link>https://tacnaviva.com/tags/html/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>hugo-basic-example</title>
+      <link>https://tacnaviva.com/tags/hugo-basic-example/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/hugo-basic-example/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>markdown</title>
+      <link>https://tacnaviva.com/tags/markdown/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/markdown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>privacy</title>
+      <link>https://tacnaviva.com/tags/privacy/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/privacy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>shortcodes</title>
+      <link>https://tacnaviva.com/tags/shortcodes/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/shortcodes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>text</title>
+      <link>https://tacnaviva.com/tags/text/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/text/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>emoji</title>
+      <link>https://tacnaviva.com/tags/emoji/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/emoji/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
