@@ -44,28 +44,34 @@
 
 <script>
   var btns = document.querySelectorAll('[data-effect]');
-  var menu = document.querySelector('#st-container');
+  var stContainer = document.querySelector('#st-container');
   var pusher = document.querySelector('.st-pusher');
   var effect;
 
 
   btns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
       e = event
       effect = e.target.getAttribute('data-effect');
 
-      menu.classList.toggle(effect);
-      menu.classList.toggle('st-menu-open');
+      stContainer.classList.toggle(effect);
+      stContainer.classList.toggle('st-menu-open');
+      // alert(effect)
     })
   })
 
-  pusher.addEventListener('click', closeMenu);
+  // pusher.addEventListener('click', closeMenu);
+  pusher.addEventListener('click', (e) => {
+    if (stContainer.classList.contains('st-menu-open')) {
+      closeMenu(e)
+    }
+  });
 
   function closeMenu(el) {
 
     if (el.target.classList.contains('st-pusher')) {
-      menu.classList.toggle(effect);
-      menu.classList.toggle('st-menu-open');
+      stContainer.classList.remove(effect);
+      stContainer.classList.remove('st-menu-open');
 
     }
   }

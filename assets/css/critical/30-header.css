@@ -37,27 +37,43 @@
   background: var(--bg);
   border-radius: 0.2rem;
   box-shadow: 0 0.5rem 1rem var(--bg1);
-  font-family: var(--font-serif);
-  left: 0;
-  margin-top: 2rem;
+
   position: absolute;
   width: 95vw;
   z-index: 1000;
 
   /* centrado */
-  transform: translate(-50%, 50%);
+  position: absolute;
+  width: 95vw;
+  z-index: 1000;
+  transform: translate(-50%, 0%);
   left: 50%;
+  /* top: 100%; */
+  /* 100% es justo debajo del contenedor */
+  top: 90%;
 }
 
-@media (--md) {
+/* #search__suggestions {
+  background-color: pink;
+  border-radius: .3rem;
+  left: 0;
+  left: 50%;
+  margin-top: 2rem;
+  position: absolute;
+  transform: translate(-50%);
+  width: 95vw;
+  width: calc(100vw - 2rem);
+  z-index: 1000
+} */
+
+@media (min-width: 768px) {
   .search {
     position: relative;
   }
 
-  /* 
   #search__suggestions {
     width: 60vw;
-  } */
+  }
 }
 
 .search__suggestions--hidden {

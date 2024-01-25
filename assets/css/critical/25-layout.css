@@ -6,8 +6,8 @@
   padding: 0.7em;
 
   position: fixed;
-  background-color: var(--fg1);
-  color: var(--bg0);
+  background-color: var(--primary);
+  color: var(--primary-fg);
   top: 0;
   left: 0;
   right: 0;
@@ -54,6 +54,7 @@
 	position: relative;
 } */
 
+/* +Sidebar */
 .st-container {
   position: relative;
   /* overflow: hidden; we need sticky for sidebars*/
@@ -226,4 +227,24 @@
 .no-csstransforms3d .st-pusher,
 .no-js .st-pusher {
   padding-left: 300px;
+}
+
+/* +Custom */
+#menu-1 {
+  position: fixed;
+  top: 0;
+  height: 120vh;
+  background: var(--bg2);
+  display: grid;
+  align-content: start;
+}
+
+.main {
+  position: relative;
+  z-index: -1;
+}
+
+.st-menu-open .st-menu {
+  position: fixed;
+  background-color: pink;
 }

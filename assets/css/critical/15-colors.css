@@ -20,7 +20,8 @@
   --fg1: #3c3836;
   --fg2: #504945;
   --fg3: #665c54;
-  --primary: #0c880c;
+  --primary: #fab140;
+  --primary-fg: black;
   --secondary: #65d7f1;
   --accent: #f8c135;
 
@@ -44,7 +45,8 @@
   --fg2: hsla(0, 0%, 100%, .4);
   --fg3: #d5c4a1;
 
-  --primary: #77f377;
+  --primary: #c68b74;
+  --primary-fg: white;
   --secondary: #0e809a;
   --accent: #ca9307;
 

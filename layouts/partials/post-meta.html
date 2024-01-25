@@ -1,12 +1,12 @@
 <div class="post-meta">
   {{- with .page.Date -}}
-    <time datetime="{{ .Format "2006-01-02" }}" class="time-created">{{ .Format "01/02/2016" }}</time>
+    <time datetime="{{ .Format "2006-01-02" }}" class="time-created">{{ .Format "02/01/2006" }}</time>
   {{- end -}}
  
   <!-- Don't show modified date when changed within the first 72 hours  -->
   {{- $hours := (.page.Lastmod.Sub .page.Date).Hours -}}
   {{- if and .page.Date .page.Lastmod (ge $hours 72) -}}
-    <time datetime="{{ .Format "2006-01-02" }}" class="time-updated"> (Actualizado en: {{ .page.Lastmod.Format "01/02/2016" }})</time>
+    <time datetime="{{ .Format "2006-01-02" }}" class="time-updated"> (Actualizado en: {{ .page.Lastmod.Format "02/01/2006" }})</time>
   {{- end -}}
   {{ with .page.Params.tags }}
     <div class="post-tags">

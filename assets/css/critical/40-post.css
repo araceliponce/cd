@@ -25,7 +25,9 @@
   letter-spacing: 2px;
 }
 
-.soy-un-single-post .post-content {
+/* .soy-un-single-post .post-content {} */
+
+.columns {
   columns: 30ch;
   column-rule: 0.1em solid currentColor;
 }
@@ -81,4 +83,19 @@ h6:hover {
   & .post-heading__anchor {
     display: inline-block;
   }
+}
+
+blockquote {
+  white-space: pre-wrap;
+  padding: 0 1rem;
+  position: relative;
+}
+
+blockquote::before {
+  content: "“";
+  font-size: 1.5em;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 1rem;
 }

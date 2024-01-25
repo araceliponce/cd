@@ -3,24 +3,18 @@ title: "About"
 draft: false
 ---
 
-## Attributions
+## Tacna Viva
+Tacna Viva, a través de sus contenidos (cortos y largos, con o sin fotos); busca ser un tributo a Tacna y a toda la vida que puedes o en algún momento pudiste encontrar en ella.
 
-This theme depends on the following projects:
+Una crónica viviente.
 
-- [Powered by Hugo](https://gohugo.io/)
-- Color scheme based on [Gruvbox](https://github.com/morhetz/gruvbox)
-- Code Highlighting by [Prism](https://prismjs.com/)
-- [Tabler Icons](https://tablericons.com/)
-- [Simple Icons](https://simpleicons.org/)
-- Content with the [#hugo-basic-example](/tags/hugo-basic-example) tag
-  originates from [gohugoio/hugoBasicExample](https://github.com/gohugoio/hugoBasicExample)
+Una oda.
 
-A big thanks to the creators! ❤️
+<!-- Quizá el mayor compendio de contenido original sobre Tacna - Perú. -->
 
-The [profile picture of Richard Hendricks is from the Fandom Silicon Valley Wiki](https://silicon-valley.fandom.com/wiki/Richard_Hendricks?file=Richard_Hendricks.jpg).
+## Créditos
+- SSG [Hugo](https://gohugo.io/),
+- Tema [Gruvbox](https://github.com/schnerring/hugo-theme-gruvbox). 
 
-## Legal
+Agradecemos a los creadores de tan valioso código abierto.
 
-The theme is [licensed under MIT](https://github.com/schnerring/hugo-theme-gruvbox/blob/main/LICENSE).
-
-All trademarks are the property of their respective owners.

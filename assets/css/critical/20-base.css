@@ -9,37 +9,36 @@
 }
 
 html {
-  /* scroll-padding-block: 2em; */
   scroll-padding-block: 3rem;
   overflow: auto;
 }
 
-/* ANIMATION */
+/* +Animaciones */
 
 html:focus-within {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-    /* scroll-behavior: auto; */
+    scroll-behavior: auto;
   }
 
   *,
   *::before,
   *::after {
-    /* animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important; */
+    scroll-behavior: auto !important;
   }
 }
 
 body {
   background: var(--bg);
   color: var(--fg1);
-  /* font-family: 'Roboto', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
   font-family: "Lora", serif;
+  font-size: 120%;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -108,7 +107,7 @@ h6 {
 
 a {
   color: inherit;
-  /* text-decoration: none; */
+  text-decoration: inherit;
 }
 
 a.link--external::after {

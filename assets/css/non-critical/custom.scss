@@ -24,14 +24,16 @@ img {
 
 @media only screen and (min-width: 768px) {
   .main {
-    grid-template-columns: 13rem 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 17rem 1fr;
+    grid-template-columns: 30% 1fr;
+    // grid-template-rows: auto auto;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .main {
-    grid-template-columns: 13rem 1fr 10rem;
+    grid-template-columns: 17rem 1fr 10rem;
+    grid-template-columns: 20% 1fr 20%;
   }
 }
 
@@ -82,10 +84,6 @@ img {
   color: --var(fg0);
 }
 
-.post datetime {
-  font-size: 0.8rem;
-}
-
 .post h2 {
   color: var(--fg0);
   padding-block: 0.5em;
@@ -93,6 +91,8 @@ img {
 
 .post time {
   color: var(--fg2);
+  font-size: 0.8rem;
+
 }
 
 time+time {
@@ -308,65 +308,7 @@ time+time {
   transform-origin: left;
 }
 
-#menu-1 {
-  position: fixed;
-  top: 0;
-  height: 120vh;
-  background: var(--bg2);
-  display: grid;
-  align-content: start;
-}
 
-.d-none {
-  display: none;
-}
-
-@media only screen and (min-width: 768px) {
-  .d-md-block {
-    display: block;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .d-md-none {
-    display: none;
-  }
-}
-
-.caps {
-  display: block;
-  text-transform: uppercase;
-}
-
-.caps--small {
-  font-size: 0.8rem;
-}
-
-.mb-1 {
-  margin-bottom: 1em;
-}
-
-blockquote {
-  white-space: pre-wrap;
-  padding: 0 1rem;
-  position: relative;
-}
-
-blockquote::before {
-  content: "“";
-  font-size: 1.5em;
-  height: 0;
-  left: 0;
-  position: absolute;
-  top: 1rem;
-}
-
-
-
-.main {
-  position: relative;
-  z-index: -1;
-}
 
 
 // <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css" />
