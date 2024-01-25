@@ -1,6 +1,10 @@
 //! Source: https://github.com/h-enk/doks/blob/master/assets/js/index.js
 
-import { Document } from "flexsearch";
+// import { Document } from "flexsearch";
+import FlexSearch from "flexsearch";
+const { Document } = FlexSearch;
+
+
 
 const search = document.getElementById("search__text");
 const suggestions = document.getElementById("search__suggestions");
