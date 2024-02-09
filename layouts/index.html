@@ -2,52 +2,18 @@
 
 
 <!-- increible lo mucho que cambia un punto-->
-<section class=" hero wide">
+<section class=" hero wide limited">
   <!-- <h2>Telling Tacna's Tales trought its natural wonders</h2> -->
   <h2>Tacna, a través de sus <em>maravillas naturales</em></h2>
   <div class="mt-2">
     {{partial "site-cats.html" .}}
   </div>
-  <a class="btn btn--glow cta">Visita el blog</a>
+  <a href="/blog" class="btn btn--glow cta">Visita el blog</a>
 
 </section>
 
-<style>
-  .hero {
-    min-height: 70svh;
-    min-height: 70vh;
-    display: grid;
-    align-items: center;
-    align-content: center;
-  }
 
-  .hero h2 {
-    font-size: clamp(2rem, 10vw + 10px, 7rem);
-    line-height: .8;
-    letter-spacing: -.05em;
-  }
-
-  .hero em {
-    color: var(--accent);
-    font-style: normal;
-  }
-
-  .mt-2 {
-    margin-top: 2rem;
-  }
-
-  .cta {
-    background-color: var(--bg1);
-    color: var(--fs1);
-    padding: 1.5rem;
-    margin-block: 1rem;
-  }
-</style>
-
-
-
-
-<div class="wide pt-5">
+<div class="wide o-hidden pt-5 px-0">
   <!-- <h1>{{ .Title | markdownify }}</h1> -->
   <!-- {{ with .Content }} -->
   <!-- <div>{{ . }}</div> -->
@@ -64,10 +30,10 @@
 </div>
 
 <style>
-  .pt-5 {
+  /* .pt-5 {
     padding-top: 5rem;
     background-color: var(--bg2);
-  }
+  } */
 
   .slide {
     min-width: min(17rem, 70vw);

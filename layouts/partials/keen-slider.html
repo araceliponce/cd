@@ -1,4 +1,4 @@
-<div class="keen-slider w-90vw" id="slider">
+<div class="keen-slider limited pt-3" id="slider">
 
   {{ range $pageIndex, $page := .Pages }}
 
@@ -25,8 +25,13 @@
   </article>
   {{ end }}
   <!-- Navigation buttons  -->
-  <button id="prev" class="arrow arrow--left" aria-label="Anterior"></button>
-  <button id="next" class="arrow arrow--right" aria-label="Siguiente"></button>
+  <!-- <button id="prev" class="arrow arrow--left" aria-label="Anterior"></button> -->
+  <!-- <button id="next" class="arrow arrow--right" aria-label="Siguiente"></button> -->
+  <div class="absolute--right">
+    <button id="prev" class="arrow arrow--left" aria-label="Anterior"> {{ partial "i_arrow.html"}}
+    </button>
+    <button id="next" class="arrow arrow--right" aria-label="Siguiente"> {{ partial "i_arrow.html"}}</button>
+  </div>
 </div>
 
 

@@ -1,4 +1,18 @@
 <div class="sidebar sidebar--right">
-  {{ partial "site-cats.html" . }}
+
+
+
+
+
+  {{ if or (eq .Title "Tags") (eq .Title "Categoria") }}
+  <!-- sidebar contents for: Tags & Categoria -->
+
+  {{ else}}
+  <!-- sidebar content for every other page -->
+  <!-- {{.Title}} -->
   {{ partial "tag-cloud.html" . }}
+
+  {{ end }}
+
+
 </div>

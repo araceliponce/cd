@@ -5,6 +5,7 @@ draft: false
 comments: false
 socialShare: true
 toc: false
+draft: true
 ---
 
 Use the [video shortcode](https://github.com/schnerring/hugo-theme-gruvbox/blob/main/layouts/shortcodes/video.html)

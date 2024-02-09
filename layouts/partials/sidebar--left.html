@@ -1,5 +1,11 @@
 <div class="sidebar sidebar--left">
-  <!-- <aside> -->
-  {{- partial "tag-cloud.html" . -}}
-  <!-- </aside> -->
+
+  <!-- {{.Type}} -->
+
+  {{if eq .Type "blog"}}
+  {{- partial "crumbs.html" . -}}
+
+  {{end}}
+
+  {{- partial "sidebar__toc.html" . -}}
 </div>

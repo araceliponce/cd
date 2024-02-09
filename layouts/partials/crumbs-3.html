@@ -1,0 +1,81 @@
+<ul id="example-menu" class="crumbs">
+  <li><a href="/">/</a></li>
+  <li class="dropdown">
+    <a href="#"> blog ▼</a>
+    <ul style="position: absolute;">
+      <li><a href="/nosotros" title="All pages with tag">acerca</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+
+    <a href="#">tags ▼</a>
+    <ul style="position: absolute;">
+      <!-- tags -->
+      {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+      {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+      <li><a href={{ .RelPermalink }} title="All pages with tag">{{$name}}<sup>{{$cnt}}</sup></a>
+      </li>
+      {{end}}
+      {{end}}
+
+      <li><a href="/tags">todos los tags</a></li>
+    </ul>
+  </li>
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/accessible-menu@3.0.8/dist/accessible-menu.min.js"></script>
+<script>
+  // import AccessibleMenu from "accessible-menu";
+
+  const menu = new AccessibleMenu.DisclosureMenu({
+    menuElement: document.querySelector("#example-menu"),
+    submenuItemSelector: "li.dropdown",
+  });
+  console.log(menu)
+</script>
+
+
+
+
+<style>
+  .hide {
+    display: none;
+  }
+
+  #example-menu {
+    list-style-type: none;
+    display: flex
+  }
+
+  .crumbs {
+    /* display: flex; */
+    flex-wrap: wrap;
+    white-space: nowrap;
+    overflow: hidden;
+    list-style-type: none;
+    overflow: auto;
+  }
+
+  @media (hover:hover) {
+    .crumbs {
+      float: right;
+      /* background: pink; */
+      /* justify-content: flex-end; */
+      /* ambos funcionan, justify content respeta los paddings */
+    }
+  }
+
+  .crumbs a {
+    max-width: 70vw;
+    overflow: hidden;
+    display: grid;
+    text-overflow: ellipsis;
+  }
+
+
+  [aria-expanded="true"]+ul {
+    background-color: white;
+  }
+</style>

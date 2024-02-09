@@ -2,8 +2,7 @@
 
 .search {
   display: flex;
-  /* grid-area: search; */
-  /* margin: 0 1rem; */
+  width: min(50vw, 30rem);
 }
 
 #search__text {
@@ -122,14 +121,12 @@
   align-items: center;
   background: none;
   border: none;
-  color: var(--yellow1);
+  /* color: var(--yellow1); */
   cursor: pointer;
   display: flex;
-  grid-area: theme-toggle;
-  margin: 0 1rem;
 
   &:hover {
-    color: var(--yellow2);
+    /* color: var(--yellow2); */
   }
 
   & svg {

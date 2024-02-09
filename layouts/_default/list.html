@@ -1,6 +1,9 @@
 {{ define "main" }}
 <div class="content  list-html-no-se-esta-usando">
-  <h1>{{ .Title | markdownify }}</h1>
+  <!-- <h1>{{ .Title | markdownify }}</h1> -->
+
+  <h1 class="page__title">Blog</h1>
+
   {{ with .Content }}
   <div>{{ . }}</div>
   {{ end }}

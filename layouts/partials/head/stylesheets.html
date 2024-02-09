@@ -3,14 +3,14 @@
 
 {{ $critical := sort (resources.Match "css/critical/*.css") "Name" | resources.Concat nil | resources.ExecuteAsTemplate nil . | resources.PostCSS }}
 {{ $nonCritical := sort (resources.Match "css/non-critical/*.css") "Name" | resources.Concat "css/non-critical.css" | resources.ExecuteAsTemplate "css/non-critical.css" . | resources.PostCSS }}
-{{ $prismDark := resources.Get "prism-themes/prism-gruvbox-dark.css" }}
-{{ $prismLight := resources.Get "prism-themes/prism-gruvbox-light.css" }}
+<!-- {{ $prismDark := resources.Get "prism-themes/prism-gruvbox-dark.css" }} -->
+<!-- {{ $prismLight := resources.Get "prism-themes/prism-gruvbox-light.css" }} -->
 
 {{ if hugo.IsProduction }}
   {{ $critical = $critical | resources.PostProcess }}
   {{ $nonCritical = $nonCritical | fingerprint "sha256" | resources.PostProcess }}
-  {{ $prismDark = $prismDark | minify | fingerprint "sha256" }}
-  {{ $prismLight = $prismLight | minify | fingerprint "sha256" }}
+  <!-- {{ $prismDark = $prismDark | minify | fingerprint "sha256" }} -->
+  <!-- {{ $prismLight = $prismLight | minify | fingerprint "sha256" }} -->
 {{ end }}
 
 <style>
@@ -30,7 +30,7 @@
 />
 
 <!-- TODO Use prefetch when more widely supported -->
-<link
+<!-- <link
   id="prism-dark"
   rel="preload"
   href="{{ $prismDark.RelPermalink }}"
@@ -38,10 +38,10 @@
   onload="this.onload=null;this.rel='stylesheet'"
   {{ if hugo.IsProduction }}integrity="{{ $prismDark.Data.Integrity }}"{{ end }}
   {{ if eq $defaultTheme "light" }}disabled{{ end }}
-/>
+/> -->
 
 <!-- TODO Use prefetch when more widely supported -->
-<link
+<!-- <link
   id="prism-light"
   rel="preload"
   href="{{ $prismLight.RelPermalink }}"
@@ -51,9 +51,9 @@
     integrity="{{ $prismLight.Data.Integrity }}"
   {{ end }}
   {{ if eq $defaultTheme "dark" }}disabled{{ end }}
-/>
+/> -->
 
-<noscript>
+<!-- <noscript>
   {{ if eq $defaultTheme "light" }}
     <link
       rel="stylesheet"
@@ -80,4 +80,4 @@
       integrity="{{ $nonCritical.Data.Integrity }}"
     {{ end }}
   />
-</noscript>
+</noscript> -->

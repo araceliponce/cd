@@ -1,0 +1,172 @@
+<ol className='crumbs'>
+  <li className='crumb'>
+    <a href="/">home</a>
+    <span className="crumb-icon">//</span>
+  </li>
+  <li className='crumb'>
+    <a href="/">home</a>
+    <div className="grid-stacked">
+      <span className="crumb-icon">//</span>
+      <select name="pets" id="pet-select" title='Navegar a otra pagina'>
+        <!-- tags -->
+        {{range $name, $taxonomy := .Site.Taxonomies.tags}} {{ $cnt := .Count }}
+        {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+        <option><a href={{ .RelPermalink }} title="All pages with tag">{{$name}}<sup>{{$cnt}}</sup></a>
+          ></option>
+        {{end}}
+        {{end}}
+      </select>
+    </div>
+  </li>
+  <li className='crumb'>
+    <a href="/">home</a>
+    <div className="grid-stacked">
+      <span className="crumb-icon">//</span>
+      <select name="pets" id="pet-select" title='Navegar a otra pagina'>
+        <option value="">---</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+      </select>
+    </div>
+  </li>
+  <li className='crumb'>
+    <a href="/">home</a>
+    <div className="grid-stacked">
+      <span className="crumb-icon">//</span>
+      <select name="pets" id="pet-select" title='Navegar a otra pagina'>
+        <option value="">---</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+      </select>
+    </div>
+  </li>
+  <li className='crumb'>
+    <a href="/">home</a>
+    <div className="grid-stacked">
+      <span className="crumb-icon">//</span>
+      <select name="pets" id="pet-select" title='Navegar a otra pagina'>
+        <option value="">---</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+      </select>
+    </div>
+  </li>
+  <li className='crumb'>
+    <a href="/">home</a>
+    <div className="grid-stacked">
+      <span className="crumb-icon">//</span>
+      <select name="pets" id="pet-select" title='Navegar a otra pagina'>
+        <option value="">---</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+      </select>
+    </div>
+  </li>
+  <li className='crumb'>
+    <a href="/">penultimo</a>
+    <div className="grid-stacked">
+      <span className="crumb-icon">//</span>
+      <select name="pets" id="pet-select" title='Navegar a otra pagina'>
+        <option value="">---</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+      </select>
+    </div>
+  </li>
+  <li className='crumb'>
+    <a href="/">ultimo</a>
+    <div className="grid-stacked">
+      <span className="crumb-icon">//</span>
+      <select name="pets" id="pet-select" title='Navegar a otra pagina'>
+        <option value="">---</option>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="hamster">Hamster</option>
+        <option value="parrot">Parrot</option>
+        <option value="spider">Spider</option>
+        <option value="goldfish">Goldfish</option>
+      </select>
+    </div>
+  </li>
+</ol>
+
+<style>
+  /* +crumbs */
+  .crumbs {
+    display: flex;
+    list-style-type: none;
+    overflow: auto;
+  }
+
+  @media (hover:hover) {
+    .crumbs {
+      float: right;
+      /* justify-content: flex-end; */
+      /* ambos funcionan, justify content respeta los paddings */
+    }
+  }
+
+  .crumbs a {
+    display: inline-block;
+    padding: .5em .7em;
+  }
+
+  .crumb {
+    display: flex;
+    align-items: center;
+  }
+
+  .crumb:last-of-type {
+    background-color: gray;
+    scroll-snap-align: end;
+
+  }
+
+  .grid-stacked {
+    --size: 3rem;
+    display: grid;
+    width: var(--size);
+    height: var(--size);
+    place-items: center;
+    grid-template-areas: stack;
+
+    background-color: pink;
+
+  }
+
+  @media (hover:hover) {
+    .grid-stacked {
+      --size: 2rem;
+
+    }
+  }
+
+  .grid-stacked>* {
+    grid-area: stack;
+  }
+
+  .crumbs select {
+    width: 3ch;
+    opacity: 0.1;
+  }
+</style>

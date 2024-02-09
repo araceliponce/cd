@@ -8,48 +8,38 @@
     <nav class="st-menu st-effect-1" id="menu-1">
       <ul class="menu--horizontal">
 
+        <li class="menu__item mt-3">
+          <a href="/">Inicio</a>
+        </li>
         <li class="menu__item">
           <a href="/blog">Blog</a>
         </li>
-
         <li class="menu__item">
-          <a href="/about">About</a>
+          <a href="/nosotros">Nosotros</a>
         </li>
-
       </ul>
 
 
     </nav>
     <div class="st-pusher">
 
-      <nav class="st-menu st-effect-3" id="menu-3">
-        <ul class="menu--vertical">
-
-          <li>
-            <a class="menu__item" href="/blog">Blog</a>
-          </li>
-
-          <li>
-            <a class="menu__item" href="/about">About</a>
-          </li>
-
-        </ul>
+      <nav class="st-menu st-effect-3" id="menu-3" hidden>
       </nav>
 
       {{ partial "header.html" . }}
+
       <main class="main">
 
-        {{ if eq .Type "home" }}
-        <!-- Mostrar este div solo en la página de inicio -->
-        {{ block "main" . }}
-        {{ end }}
+        {{ if .IsHome }}
+        <!-- Mostrar solo en la página de inicio: -->
+        {{ block "main" . }} {{ end }}
+        <!-- PENDIENTE {{ partial "notice.html" . }} -->
 
         {{ else }}
-        <!-- Mostrar este div en cualquier otra página -->
-
-        {{ partial "sidebar--left.html" }}
+        <!-- Mostrar en cualquier otra página: -->
+        {{ partial "sidebar--left.html" .}}
         {{ block "main" . }}{{ end }}
-        {{ partial "sidebar--right.html" }}
+        {{ partial "sidebar--right.html" .}}
 
         {{ end }}
       </main>

@@ -2,9 +2,14 @@
 {{ with .TableOfContents }}
 <aside class="toc">
   <nav>
-    <p class="sidebar__heading">Table Of Contents</p>
+    <p class="fs-sm">Índice del post</p>
     {{ . }}
   </nav>
+  <style>
+    .toc ul {
+      list-style-type: auto;
+    }
+  </style>
 </aside>
 {{ end }}
 {{ end }}

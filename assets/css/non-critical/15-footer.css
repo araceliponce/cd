@@ -1,4 +1,5 @@
 footer {
+  border-top: 1px solid rebeccapurple;
   align-items: center;
   color: var(--fg3);
   display: flex;
@@ -28,52 +29,6 @@ a:focus {
 
 .clearfix:after {
   clear: both;
-}
-
-.codrops-top a {
-  display: inline-block;
-  padding: 0 1em;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-}
-
-.codrops-top a:hover {
-  background: rgba(255, 255, 255, 0.4);
-  color: #333;
-}
-
-.codrops-top span.right {
-  float: right;
-}
-
-.codrops-top span.right a {
-  display: block;
-  float: left;
-}
-
-.codrops-icon:before {
-  margin: 0 4px;
-  text-transform: none;
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
-  font-family: "codropsicons";
-  line-height: 1;
-  speak: none;
-  -webkit-font-smoothing: antialiased;
-}
-
-.codrops-icon-drop:before {
-  content: "\e001";
-}
-
-.codrops-icon-prev:before {
-  content: "\e004";
-}
-
-.limited {
-  max-width: 69em;
-  margin: 0 auto;
 }
 
 .wide {
@@ -208,4 +163,12 @@ blockquote:before {
 .w-90vw {
   width: 90vw !important;
   margin-inline: auto;
+}
+
+.fs-sm {
+  font-size: 1rem;
+}
+
+.w-fit-content {
+  width: fit-content;
 }

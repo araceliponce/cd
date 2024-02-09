@@ -14,6 +14,31 @@
     <span> by </span><span class="post-meta__author">{{ . }}</span>
     {{- end -}}
 
+    <!-- Tags del post -->
+    {{ with .Params.tags }}
+    <span class="sr-only">Etiquetas del post:</span>
+    <div class="post-tags">
+      {{ range . -}}
+      <a class="post-tag" href="{{ urlize (printf " tags/%s" . ) | absURL }}">
+        {{- /* Replace hyphen with space */ -}}
+        {{- replace (urlize .) "-" " " | safeHTML -}}
+      </a>
+      {{- end }}
+    </div>
+    {{ end }}
+
+    <!-- Cat del post -->
+    {{ with .Params.categoria }}
+    <div class="post-cats">
+      {{ range . -}}
+      <a class="post-cat" href="{{ urlize (printf " categoria/%s" . ) | absURL }}">
+        {{- /* Replace hyphen with space */ -}}
+        {{- replace (urlize .) "-" " " | safeHTML -}}
+      </a>
+      {{- end }}
+    </div>
+    {{ end }}
+
 
     {{ if .Params.Comments }}
     {{ partial "comments.html" . }}

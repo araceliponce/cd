@@ -17,10 +17,10 @@ function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
 
   // Prism theme
-  const prismDark = document.getElementById("prism-dark");
-  const prismLight = document.getElementById("prism-light");
-  prismDark.toggleAttribute("disabled", theme === "light");
-  prismLight.toggleAttribute("disabled", theme === "dark");
+  // const prismDark = document.getElementById("prism-dark");
+  // const prismLight = document.getElementById("prism-light");
+  // prismDark.toggleAttribute("disabled", theme === "light");
+  // prismLight.toggleAttribute("disabled", theme === "dark");
 
   // Store user preference
   localStorage.setItem("theme", theme);
@@ -34,6 +34,7 @@ function toggleTheme(e) {
   const theme = e.currentTarget.classList.contains("light--hidden")
     ? "light"
     : "dark";
+  // alert(theme);
   setTheme(theme);
 }
 

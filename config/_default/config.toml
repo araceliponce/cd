@@ -129,16 +129,11 @@ enableRobotsTXT = true
     identifier = "blog"
     name = "Blog"
     url = "/blog"
-    weight = 10
-  [[menu.main]]
-    identifier = "cv"
-    name = "CV"
-    url = "/cv"
     weight = 20
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about"
+    identifier = "nosotros"
+    name = "Nosotros"
+    url = "/nosotros"
     weight = 30
 
 [languages]
@@ -146,12 +141,4 @@ enableRobotsTXT = true
     languageName = "Español"
     weight = 10
       [languages.es.params]
-      search = 'Buscaaaaa ...'
-  [languages.en]
-    languageName = "Inglés"
-    weight = 20
-    [languages.en.params]
-      search = 'Seaaarch ...'
-  [languages.fr]
-    languageName = "Francés"
-    weight = 30
+      search = 'Busca en TacnaViva.com'
