@@ -1,0 +1,15 @@
+<div class="post-meta post-meta--coveronly">
+
+  {{ if .page.Params.cover }}
+  <!-- 
+      Only lazy-load images below-the-fold. For post lists, start loading 
+      covers from the third post and onwards.
+    -->
+  {{ $lazy := ge .pageIndex 2 }}
+  {{ partial "image.html" (dict "src" .page.Params.cover.src "alt" .page.Params.cover.alt "caption" .page "lazy" $lazy) }}
+  {{ end }}
+
+
+
+
+</div>

@@ -141,4 +141,4 @@ enableRobotsTXT = true
     languageName = "Español"
     weight = 10
       [languages.es.params]
-      search = 'Busca en TacnaViva.com'
+      search = 'Busca en TacnaViva.com:'

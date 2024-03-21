@@ -1,23 +1,34 @@
-footer {
-  border-top: 1px solid rebeccapurple;
-  align-items: center;
-  color: var(--fg3);
-  display: flex;
-  font-size: 0.8rem;
-  justify-content: center;
-  padding-bottom: 0.5rem;
-  padding-top: 2rem;
+.footer {
+  position: relative;
+  z-index: -1;
   text-align: center;
+  opacity: 0.7;
+  padding-block: 3rem 1rem;
 }
 
-/* Buttons */
+/* width */
+.w-90vw {
+  width: 90vw !important;
+  margin-inline: auto;
+}
+
+.w-fit-content {
+  width: fit-content;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* links */
 a {
   color: var(--primary);
 }
 
 a:hover,
 a:focus {
-  color: var(--accent);
+  color: var(--secondary);
 }
 
 /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
@@ -31,30 +42,10 @@ a:focus {
   clear: both;
 }
 
+/* Grid */
+
 .wide {
   grid-column: -1/1 !important;
-}
-
-.post + .post {
-  margin-top: 2rem;
-}
-
-.post h2 {
-  color: var(--fg1);
-}
-
-.post-meta {
-  color: var(--fg3);
-}
-
-.post-content,
-.post-meta {
-  padding-top: 0.5em;
-}
-
-.post-meta {
-  letter-spacing: 2px;
-  line-height: 0.9;
 }
 
 /* .soy-un-single-post .post-content {
@@ -64,60 +55,15 @@ a:focus {
   columns: 30ch;
 } */
 
-.post-content p {
+.columns {
+  columns: 30ch;
+  column-rule: 0.1em solid currentColor;
+}
+
+.columns p {
   page-break-inside: avoid;
   -moz-column-break-inside: avoid;
   break-inside: avoid;
-}
-
-.post-content p + p {
-  margin-top: 0.5em;
-}
-
-.post-content a,
-.post-header a {
-  color: var(--blue2);
-  color: var(--primary-alt);
-}
-
-.post-content a:hover,
-.post-header a:hover {
-  color: var(--blue1);
-  color: var(--primary);
-}
-
-.post-tags {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.8em;
-  gap: 0.3rem;
-  list-style: none;
-  margin: 1rem 0;
-  padding: 0;
-}
-
-.post-tags a {
-  background-color: var(--bg2);
-  border-radius: 0.25em;
-  color: #fff;
-  padding: 0.3em 0.7em;
-}
-
-.post-heading__anchor {
-  display: none;
-}
-
-h1:hover .post-heading__anchor,
-h2:hover .post-heading__anchor {
-  display: inline-block;
-}
-
-img {
-  margin-left: auto;
-  margin-right: auto;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 
 /* +Utilities */
@@ -130,8 +76,13 @@ img {
   .d-md-block {
     display: block;
   }
+
+  .d-md-none {
+    display: none;
+  }
 }
 
+/* +Text */
 .caps {
   display: block;
   text-transform: uppercase;
@@ -145,30 +96,37 @@ img {
   margin-bottom: 1em;
 }
 
-blockquote {
-  padding: 0 1rem;
-  position: relative;
-  white-space: pre-wrap;
-}
-
-blockquote:before {
-  content: "“";
-  font-size: 1.5em;
-  height: 0;
-  left: 0;
-  position: absolute;
-  top: 1rem;
-}
-
-.w-90vw {
-  width: 90vw !important;
-  margin-inline: auto;
-}
-
 .fs-sm {
   font-size: 1rem;
 }
 
-.w-fit-content {
-  width: fit-content;
+.relative {
+  position: relative;
+}
+
+/* https://gist.github.com/ffoodd/000b59f431e3e64e4ce1a24d5bb36034 */
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
 }

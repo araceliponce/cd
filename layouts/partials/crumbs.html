@@ -5,32 +5,21 @@
 
 <!-- crumbs: -->
 <div id="crumbs" class="orange">
-  <!-- <div class="orange"> -->
-  <span class="fs-sm">Estas aquí:</span>
+  <span class="sr-only">Estas aquí:</span>
   <ol>
     {{- range .Ancestors.Reverse }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a><span> ></span></li>
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ partial "i_arrow.html" }}
+    </li>
     {{- end }}
     <li><span>{{ .Title }}</span></li>
   </ol>
-  <!-- </div> -->
   <style>
     #crumbs {
-      /* margin-top: 7rem; */
-
       margin-bottom: 1rem;
-
-      align-items: end;
-      gap: 0;
-
-    }
-
-    .orange {
-      outline: none;
-      background-color: rgb(255 194 194 / 19%);
-      border-radius: .3rem;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding: 0;
+      display: flex;
     }
 
     #crumbs ol {
@@ -39,18 +28,19 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0;
-      line-height: 1.2;
     }
 
     #crumbs li {
       position: relative;
-      margin-right: 1ex;
-
     }
 
     #crumbs a {
       margin-bottom: .5em;
+    }
 
+    svg {
+      height: .7em;
+      width: auto;
     }
   </style>
 </div>

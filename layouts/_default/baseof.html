@@ -15,7 +15,10 @@
           <a href="/blog">Blog</a>
         </li>
         <li class="menu__item">
-          <a href="/nosotros">Nosotros</a>
+          <a href="/insectos">Insectos en Tacna</a>
+        </li>
+        <li class="menu__item">
+          <a href="/recomendaciones">Recomendaciones</a>
         </li>
       </ul>
 
@@ -33,13 +36,21 @@
         {{ if .IsHome }}
         <!-- Mostrar solo en la página de inicio: -->
         {{ block "main" . }} {{ end }}
-        <!-- PENDIENTE {{ partial "notice.html" . }} -->
 
         {{ else }}
         <!-- Mostrar en cualquier otra página: -->
-        {{ partial "sidebar--left.html" .}}
-        {{ block "main" . }}{{ end }}
-        {{ partial "sidebar--right.html" .}}
+
+        <div class="limited l-main">
+          <div class="wide limited">
+            {{if eq .Type "blog"}}
+            {{- partial "crumbs.html" . -}}
+            {{end}}
+          </div>
+
+          {{ partial "sidebar--left.html" .}}
+          {{ block "main" . }}{{ end }}
+          {{ partial "sidebar--right.html" .}}
+        </div>
 
         {{ end }}
       </main>

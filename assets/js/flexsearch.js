@@ -113,7 +113,7 @@ document.addEventListener("keydown", (e) => {
 
     if (searchResultsMap.size === 0 && searchText) {
       const noResultsMessage = document.createElement("div")
-      noResultsMessage.innerHTML = `No results for "<strong>${searchText}</strong>"`
+      noResultsMessage.innerHTML = `Sin resultados para "<strong>${searchText}</strong>"`
       noResultsMessage.classList.add("search__no-results");
       suggestions.appendChild(noResultsMessage);
       return;

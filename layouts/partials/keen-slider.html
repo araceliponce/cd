@@ -1,32 +1,27 @@
 <div class="keen-slider limited pt-3" id="slider">
 
+
   {{ range $pageIndex, $page := .Pages }}
+  {{ if $page.Params.cover }}
+
 
   <article class="keen-slider__slide slide">
-    <div class="post-header">
-      <h2>
-        <a href="{{ $page.RelPermalink }}">{{ .Title | markdownify }}</a>
-      </h2>
-      {{ partial "post-meta--keen.html" (dict "page" $page "pageIndex" $pageIndex) }}
-    </div>
+    <!-- <h2 class="on-right">
+      <a href="{{ $page.RelPermalink }}">{{ .Title | markdownify }}</a>
+    </h2> -->
+    {{ partial "post-meta--keen.html" (dict "page" $page "pageIndex" $pageIndex) }}
 
-    <!-- <div class="post-content">
-      {{ with .Description }}
-      {{ . }}
-      {{ else }}
-      {{ .Summary }}
-      {{ if .Truncated }}
-      <div class="post-content__read-more">
-        <a href="{{ $page.RelPermalink }}">Leer más</a>
-      </div>
-      {{ end }}
-      {{ end }}
-    </div> -->
+
+    <style>
+      .on-bottom {
+        bottom: 0;
+      }
+    </style>
+
   </article>
   {{ end }}
+  {{ end }}
   <!-- Navigation buttons  -->
-  <!-- <button id="prev" class="arrow arrow--left" aria-label="Anterior"></button> -->
-  <!-- <button id="next" class="arrow arrow--right" aria-label="Siguiente"></button> -->
   <div class="absolute--right">
     <button id="prev" class="arrow arrow--left" aria-label="Anterior"> {{ partial "i_arrow.html"}}
     </button>
@@ -102,3 +97,71 @@
   document.getElementById('prev').addEventListener('click', () => keenSlider.prev());
   document.getElementById('next').addEventListener('click', () => keenSlider.next());
 </script>
+
+<style>
+  // <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css" />
+
+  .slider {
+    display: flex;
+    overflow: hidden;
+  }
+
+
+  .slide {
+    max-height: fit-content;
+    min-height: 15rem;
+    gap: 1ch;
+    background-color: var(--post-ghost);
+    border-radius: .3rem;
+    outline: .5px solid currentColor;
+    outline-offset: -1px;
+
+  }
+
+
+
+  #keen-slider .post-meta>* {
+    height: 12rem;
+    width: 20rem;
+    height: min(12rem, 48vw) !important;
+    width: min(20rem, 70vw) !important;
+    overflow: hidden;
+    border-radius: .5rem;
+    margin-inline: auto;
+  }
+
+  #keen-slider .post-tags {
+    pointer-events: none;
+  }
+
+  .keen-slider:not([data-keen-slider-disabled]) {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    align-content: flex-start;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -khtml-user-select: none;
+    width: 100%
+  }
+
+  .keen-slider:not([data-keen-slider-disabled]) .keen-slider__slide {
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%
+  }
+
+  .keen-slider:not([data-keen-slider-disabled])[data-keen-slider-reverse] {
+    flex-direction: row-reverse
+  }
+
+  .keen-slider:not([data-keen-slider-disabled])[data-keen-slider-v] {
+    flex-wrap: wrap
+  }
+</style>

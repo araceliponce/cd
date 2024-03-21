@@ -1,18 +1,28 @@
 .post {
-  /* padding-inline: 2rem; */
-  /* border-radius: .5rem; */
+  background-color: var(--post-ghost);
+  position: relative;
 }
 
 .post + .post {
   margin-top: 2rem;
 }
 
-.post h2 {
-  color: var(--fg1);
+h1,
+h2,
+h3 {
+  opacity: 0.9;
+  padding-block: 0.5em;
 }
 
-.post-meta {
-  color: var(--fg3);
+.post time {
+  color: var(--text-3);
+  color: hsl(296deg 61.57% 29.33%);
+  font-size: 0.8rem;
+}
+
+time + time {
+  display: inline-block !important;
+  padding-inline: 1ex;
 }
 
 .post-meta,
@@ -21,19 +31,9 @@
 }
 
 .post-meta {
+  max-width: 100%;
   line-height: 0.9;
   letter-spacing: 2px;
-}
-
-/* .soy-un-single-post .post-content {} */
-
-.columns {
-  columns: 30ch;
-  column-rule: 0.1em solid currentColor;
-}
-
-.post-content p {
-  break-inside: avoid;
 }
 
 .post-content p + p {
@@ -51,23 +51,43 @@
   }
 }
 
-.post-tags {
-  text-decoration: none;
+.post-tags,
+.post-cats {
   padding: 0;
   list-style: none;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
-  margin: 1rem 0;
+  margin: 1ch 0;
   font-size: 0.8em;
 }
 
-.post-tags a {
-  background-color: var(--bg2);
-  color: white;
+.post-cats a,
+.post-tags a,
+#crumbs a {
+  text-decoration: none;
+  background-color: var(--post-ghost);
   padding: 0.3em 0.7em;
   border-radius: 0.25em;
+  font-size: 0.8rem;
+}
+
+#crumbs span {
+  display: inline-block;
+  padding: 0.3em 0.7em;
+  border-radius: 0.25em;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.post a {
+  text-decoration: underline;
+}
+
+.post-tags a:hover,
+.post-cat:hover {
+  outline: 1px solid var(--accent);
 }
 
 .post-heading__anchor {
@@ -98,4 +118,16 @@ blockquote::before {
   left: 0;
   position: absolute;
   top: 1rem;
+}
+
+.post svg {
+  display: inline-block;
+  color: var(--primary);
+  height: 1.5rem;
+}
+
+.more {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
 }

@@ -3,7 +3,7 @@
   <article class="post soy-un-single-post">
     <div class="post-header">
       <h1>{{ .Title | markdownify }}</h1>
-      {{ partial "post-meta.html" (dict "page" . "pageIndex" 0) }}
+      {{ partial "post-meta--coveronly.html" (dict "page" . "pageIndex" 0) }}
     </div>
 
     <div class="post-content">
@@ -18,6 +18,7 @@
     {{ with .Params.tags }}
     <span class="sr-only">Etiquetas del post:</span>
     <div class="post-tags">
+      {{ partial "i_tag.html" . }}
       {{ range . -}}
       <a class="post-tag" href="{{ urlize (printf " tags/%s" . ) | absURL }}">
         {{- /* Replace hyphen with space */ -}}
@@ -30,6 +31,8 @@
     <!-- Cat del post -->
     {{ with .Params.categoria }}
     <div class="post-cats">
+      {{ partial "i_cat.html" . }}
+
       {{ range . -}}
       <a class="post-cat" href="{{ urlize (printf " categoria/%s" . ) | absURL }}">
         {{- /* Replace hyphen with space */ -}}

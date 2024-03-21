@@ -2,16 +2,14 @@
 
 
 
-
-
+  
   {{ if or (eq .Title "Tags") (eq .Title "Categoria") }}
-  <!-- sidebar contents for: Tags & Categoria -->
+    <!-- sidebar contents for: Tags & Categoria -->
 
   {{ else}}
-  <!-- sidebar content for every other page -->
-  <!-- {{.Title}} -->
-  {{ partial "tag-cloud.html" . }}
-
+    <!-- sidebar content for every other page -->
+    <!-- {{ partial "tag-cloud.html" . }} -->
+    {{ partial "site-tags.html" . }}
   {{ end }}
 
 

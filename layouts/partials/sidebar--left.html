@@ -2,10 +2,18 @@
 
   <!-- {{.Type}} -->
 
-  {{if eq .Type "blog"}}
-  {{- partial "crumbs.html" . -}}
 
-  {{end}}
 
   {{- partial "sidebar__toc.html" . -}}
+  {{- partial "calendar.html" . -}}
+
+  <style>
+    .sidebar--left {
+      scrollbar-color: transparent transparent;
+    }
+
+    .sidebar--left>* {
+      margin-right: 2rem;
+    }
+  </style>
 </div>

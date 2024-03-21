@@ -1,50 +1,78 @@
 {{ define "main" }}
 
+{{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 
-<!-- increible lo mucho que cambia un punto-->
-<section class=" hero wide limited">
-  <!-- <h2>Telling Tacna's Tales trought its natural wonders</h2> -->
-  <h2>Tacna, a través de sus <em>maravillas naturales</em></h2>
-  <div class="mt-2">
-    {{partial "site-cats.html" .}}
-  </div>
-  <a href="/blog" class="btn btn--glow cta">Visita el blog</a>
+
+{{ range $pages}}
+{{ if .Params.pinned }}
+<section class="wide limited">
+
+  <article class="post grid md-two-columns">
+
+
+    {{ partial "image.html" (dict "src" .Params.cover.src "alt" .Params.cover.alt "caption" .Params.cover.caption "page" . "lazy" true) }}
+    <div>
+      <h2>{{ .Title }}</h2>
+      {{ if .Params.subtitle }}
+      <small>{{ .Params.subtitle }}</small>
+      {{ end }}
+      <!-- <p>{{ .Summary }}</p> -->
+
+    </div>
+  </article>
 
 </section>
 
-
-<div class="wide o-hidden pt-5 px-0">
-  <!-- <h1>{{ .Title | markdownify }}</h1> -->
-  <!-- {{ with .Content }} -->
-  <!-- <div>{{ . }}</div> -->
-  <!-- {{ end }} -->
-  <!-- </div> -->
-  <!-- See https://gohugo.io/functions/where/#mainsections -->
-  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{ $paginator := .Paginate $pages }}
-  <!-- {{ partial "post-list.html" $paginator }} -->
-  {{ partial "keen-slider.html" $paginator }}
+{{ end }}
+{{ end }}
 
 
+<section class="wide limited ">
 
-</div>
+  <div class="columns">
+    {{ range $pages}}
+    <article class="post">
 
-<style>
-  /* .pt-5 {
-    padding-top: 5rem;
-    background-color: var(--bg2);
-  } */
+     
 
-  .slide {
-    min-width: min(17rem, 70vw);
-    /* min-height: min(20rem, 50vw); */
-    display: flex !important;
-    flex-direction: column;
-    align-items: start;
-    padding: 1rem;
-  }
-</style>
+      {{ if .Params.cover }}
 
 
+      {{ partial "image.html" (dict "src" .Params.cover.src "alt" .Params.cover.alt "caption" .Params.cover.caption "page" . "lazy" true) }}
+
+      {{ end }}
+
+      <h2>{{ .Title }}</h2>
+
+      {{ if .Params.subtitle }}
+      <small>{{ .Params.subtitle }}</small>
+      {{ end }}
+
+      <!-- <p>{{ .Summary }}</p> -->
+
+      <a href="{{ .Permalink }}">Leer más</a>
+
+    </article>
+    {{ end }}
+  </div>
+
+  <style>
+    .columns {
+      --post-ghost: transparent;
+      columns: 30ch;
+      columns: min(80vw, 35ch);
+      column-rule: none;
+    }
+
+    .columns>* {
+      break-inside: avoid;
+    }
+
+    .columns h2{
+      /* text-transform: uppercase; */
+      font-weight: 700;
+    }
+  </style>
+</section>
 
 {{ end }}

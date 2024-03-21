@@ -1,0 +1,46 @@
+{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ $pagesByMonth := dict }}
+
+<div class="calendar">
+    {{ range $pages }}
+    {{ $month := dateFormat "Jan 2006" .Date }}
+    {{ $pageList := slice }}
+    {{ with index $pagesByMonth $month }}
+    {{ $pageList = . }}
+    {{ end }}
+    {{ $pageList = $pageList | append . }}
+    {{ $pagesByMonth = $pagesByMonth | merge (dict $month $pageList) }}
+    {{ end }}
+
+    {{ range $month, $posts := $pagesByMonth }}
+    <div class="month">
+        <b class="caps">{{ $month }}</b>
+        <ul>
+            {{ range $posts }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+    <style>
+        .calendar {
+            background: var(--post-ghost);
+            font-size: .8rem;
+        }
+
+        .calendar a {
+            color: inherit;
+        }
+
+        .month ul {
+            display: grid;
+            grid-auto-flow: column;
+        }
+
+        .caps {
+            text-transform: capitalize;
+        }
+    </style>
+
+</div>

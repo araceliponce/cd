@@ -35,10 +35,10 @@ html:focus-within {
 }
 
 body {
-  background: var(--bg);
-  color: var(--fg1);
+  background: var(--background);
+  color: var(--text);
   font-family: "Lora", serif;
-  font-size: 120%;
+  /* font-size: 120%; */
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -58,38 +58,41 @@ svg,
 figure {
   display: block;
   max-width: 100%;
-}
-
-img,
-video {
   height: auto;
-}
-
-img {
   border-radius: 0.3rem;
 }
 
+img {
+  object-fit: cover;
+}
+
 figcaption {
-  color: var(--fg3);
   font-size: 0.9em;
   opacity: 0.8;
   display: block;
   margin-block: 0.5em;
 }
 
-/*
-  6. Remove built-in form typography styles
-*/
-input,
-button,
-textarea,
-select {
-  font: inherit;
+ul,
+ol {
+  padding: 1em;
 }
 
-button {
+input,
+button,
+select,
+textarea,
+select {
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
   border: none;
   outline: 1px solid transparent;
+  cursor: pointer;
+}
+
+svg {
+  display: inline-block;
 }
 
 /*
@@ -144,13 +147,13 @@ table {
 table,
 th,
 td {
-  border: 1px solid var(--bg1);
+  border: 1px solid currentColor;
   padding: 0.5rem;
 }
 
 hr {
   border: none;
-  background: var(--bg1);
+  background: currentColor;
   height: 1px;
   margin: 3rem auto;
   width: 80%;
@@ -158,58 +161,18 @@ hr {
 
 mark {
   background: var(--secondary);
-  /* color: var(--bg0); */
 }
 
 abbr {
   text-underline-offset: 0.2rem;
 }
 
-code,
-kbd,
-mark,
-pre {
-  border-radius: 0.2rem;
-  padding: 0 0.2em;
-}
-
-pre code {
-  padding: 0;
-}
-
-code,
-kbd,
-pre,
-th {
-  background: var(--bg1);
-}
-
-code,
-kbd,
-pre,
-th {
-  font-family: monospace;
-}
-
-code,
-kbd {
-  & code,
-  & kbd {
-    background: var(--bg2);
-  }
-}
-
-pre {
-  padding: 1rem;
-}
-
 blockquote.twitter-tweet {
-  border-left: var(--primary-alt) 5px solid;
-  margin: 0.5rem 0;
+  --blue1: blue;
+  --blue2: cornflowerblue;
 
-  & code {
-    background: var(--bg2);
-  }
+  border-left: var(--blue1) 5px solid;
+  margin: 0.5rem 0;
 
   & p:first-of-type {
     margin-top: 0;
@@ -237,12 +200,7 @@ blockquote.twitter-tweet {
   }
 }
 
-ul,
-ol {
-  padding: 1em;
-}
-
-input {
-  outline: none;
-  border: none;
+a {
+  text-decoration: underline;
+  transition: all 0.2s ease-out;
 }

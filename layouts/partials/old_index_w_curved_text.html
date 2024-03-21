@@ -1,0 +1,101 @@
+{{ define "main" }}
+
+
+<!-- increible lo mucho que cambia un punto-->
+<section class=" hero wide limited">
+  <!-- <h2>Telling Tacna's Tales trought its natural wonders</h2> -->
+
+  <h2 class="sr-only">Tacna, a través de sus <em>maravillas naturales</em></h2>
+
+
+  <div class="headline--curved" aria-hidden="true">
+    <svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 777 300">
+      <path id="path--normal" fill="none" d="M710 396c0 171.2-138.8 310-310 310S90 567.2 90 396 228.8 86 400 86s310 138.8 310 310z"></path>
+      <path id="path--wide" fill="none" d="M785,389.9c0,171.2-175.7,310-392.5,310S0,561.1,0,389.9s175.7-310,392.5-310S785,218.7,785,389.9z"></path>
+      <text dominant-baseline="middle" text-anchor="middle" class="">
+        <textPath xlink:href="#path--wide" startOffset="75%" class="">
+          <tspan class="line-one">TACNA VIVA</tspan>
+        </textPath>
+        <textPath xlink:href="#path--wide" startOffset="75%" class="d-none d-md-block">
+          <tspan class="line-two" dy="1.8em">a través de sus maravillas naturales.</tspan>
+        </textPath>
+      </text>
+    </svg>
+    <p class="d-md-none">a través <br>de sus maravillas naturales<span class="em">.</span></p>
+
+  </div>
+
+  <style>
+    .headline--curved {
+      position: relative;
+      letter-spacing: -.04em;
+      line-height: .88;
+      font-size: clamp(4rem, 205vw + 10px, 7rem);
+    }
+
+    .headline--curved>* {
+      width: 95vw;
+      text-align: center;
+    }
+
+    .hero svg {
+      fill: currentColor;
+    }
+
+    .line-two {
+      letter-spacing: .15em;
+      font-size: clamp(2rem, 3vw + 10px, 2rem);
+    }
+
+
+    .headline--curved p {
+      position: absolute;
+      top: 60%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: clamp(2rem, 5vw + 10px, 3rem);
+      font-size: clamp(2rem, 3vw + 10px, 2rem);
+
+      letter-spacing: .05em;
+      max-width: 90vw;
+      margin-inline: auto;
+
+    }
+  </style>
+
+  <div class="mt-2">
+    {{partial "site-cats.html" .}}
+  </div>
+
+
+</section>
+
+
+<section class="wide o-hidden px-0">
+
+  <!-- See https://gohugo.io/functions/where/#mainsections -->
+  {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ $paginator := .Paginate $pages }}
+  <!-- {{ partial "post-list.html" $paginator }} -->
+  {{ partial "keen-slider.html" $paginator }}
+
+
+  <a href="/blog" class="btn cta">Visita el blog</a>
+
+</section>
+
+
+<style>
+  .slide {
+    min-width: min(15rem, 60vw);
+    display: flex !important;
+    flex-direction: column;
+    align-items: start;
+    padding: 1rem;
+  }
+</style>
+
+
+
+{{ end }}

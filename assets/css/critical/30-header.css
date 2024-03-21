@@ -1,22 +1,40 @@
 /*! purgecss start ignore */
 
-.search {
-  display: flex;
-  width: min(50vw, 30rem);
+.header svg {
+  width: 1em;
+  height: 1em;
 }
 
-#search__text {
-  border: 1px solid var(--bg2);
-  border-radius: 0.2rem;
-  background: var(--bg2);
-  caret-color: var(--fg);
-  color: var(--fg);
+.logo__text {
+  display: flex;
+}
+
+.search {
+  display: flex;
+  width: min(40vw, 30rem);
+  border-radius: 0.5rem;
+  outline: 1px solid currentColor;
+}
+
+.search:focus-within {
+  outline-color: pink;
+}
+
+.search > * {
+  width: 100%;
+}
+
+input#search__text {
+  background-color: transparent;
+
+  caret-color: violet;
+
   outline: none;
   padding: 0 0.5rem;
   width: 100%;
 
   &:hover {
-    border-color: var(--bg3);
+    border-color: var(--accent);
   }
 
   &:focus {
@@ -32,10 +50,35 @@
   }
 }
 
+.on-right,
+.on-left {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.3rem;
+  /* height: 100%; */
+}
+
+/* .on-right svg { */
+/* .header svg {
+  width: fit-content;
+  height: inherit;
+} */
+
+.on-left {
+  left: 0;
+  right: auto;
+}
+
+.search:focus-within svg {
+  /* opacity: .5; */
+}
+
 #search__suggestions {
-  background: var(--bg);
+  background: var(--text);
+  color: var(--background);
   border-radius: 0.2rem;
-  box-shadow: 0 0.5rem 1rem var(--bg1);
+  /* box-shadow: 0 0.5rem 1rem var(--bg1); */
 
   position: absolute;
   width: 95vw;
@@ -52,19 +95,6 @@
   top: 90%;
 }
 
-/* #search__suggestions {
-  background-color: pink;
-  border-radius: .3rem;
-  left: 0;
-  left: 50%;
-  margin-top: 2rem;
-  position: absolute;
-  transform: translate(-50%);
-  width: 95vw;
-  width: calc(100vw - 2rem);
-  z-index: 1000
-} */
-
 @media (min-width: 768px) {
   .search {
     position: relative;
@@ -80,14 +110,14 @@
 }
 
 .search__suggestion-item {
-  border-bottom: 1px dashed var(--bg2);
+  border-bottom: 1px dashed var(--accent);
   display: grid;
   grid-template-columns: 1fr 2fr;
 
   &:focus,
   &:focus-visible,
   &:hover {
-    background: var(--bg1);
+    background: var(--secondary);
     cursor: pointer;
     outline: none;
   }
@@ -108,7 +138,7 @@
 }
 
 .search__suggestion-description {
-  border-left: 1px solid var(--bg2);
+  /* border-left: 1px solid var(--bg2); */
 }
 
 .search__no-results {
@@ -117,25 +147,6 @@
 
 /*! purgecss end ignore */
 
-.theme__toggle {
-  align-items: center;
-  background: none;
-  border: none;
-  /* color: var(--yellow1); */
-  cursor: pointer;
-  display: flex;
-
-  &:hover {
-    /* color: var(--yellow2); */
-  }
-
-  & svg {
-    height: 28px;
-    width: 28px;
-  }
-}
-
-/* TODO: simplify deep nesting */
 nav#menu {
   align-items: center;
   display: flex;

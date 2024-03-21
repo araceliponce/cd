@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Tacna Viva</title>
+    <link>https://tacnaviva.com/tags/</link>
+    <description>Recent content in Tags on Tacna Viva</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es</language>
+    <copyright>Copyright © 2024</copyright>
+    <lastBuildDate>Mon, 12 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tacnaviva.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mariposas anaranjadas</title>
+      <link>https://tacnaviva.com/tags/mariposas-anaranjadas/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/mariposas-anaranjadas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>mariposas con manchas</title>
+      <link>https://tacnaviva.com/tags/mariposas-con-manchas/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/mariposas-con-manchas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>mariposas amarillas</title>
+      <link>https://tacnaviva.com/tags/mariposas-amarillas/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/mariposas-amarillas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>mariposas azufre</title>
+      <link>https://tacnaviva.com/tags/mariposas-azufre/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://tacnaviva.com/tags/mariposas-azufre/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
